@@ -8,10 +8,12 @@ class TodoItem extends Component {
     }
 
     render() {
+        // const content = this.props;
         return (
             <li key={this.props.index}
                 onClick={this.handDeleteLi}>
                 {this.props.content}
+                {/*{content}*/}
             </li>
         )
     }
@@ -19,9 +21,9 @@ class TodoItem extends Component {
     handDeleteLi() {
         // alert(1);
         // console.log(this.props.index);
-        this.props.handDeleteItem(this.props.index);
+        const { handDeleteItem, index } = this.props;
+        handDeleteItem(index);
     }
-
 }
 
 export default TodoItem;
