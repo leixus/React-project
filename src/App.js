@@ -15,6 +15,7 @@ class App extends Component {
     this.handDeleteLi = this.handDeleteLi.bind(this)
   }
 
+  // 当组件的stats或者props发生改变的时候，render函数就会重新执行
   render() {
     return (
       <div>
@@ -45,10 +46,6 @@ class App extends Component {
   }
 
   handChanageInput(e) {
-    // console.log(e.target.value);
-    // this.setState({
-    //   inputValue: e.target.value
-    // })
     const value = e.target.value;
     // 会出现异步问题
     this.setState(() => ({
@@ -57,11 +54,6 @@ class App extends Component {
   }
 
   handClickSubmit() {
-    // console.log(this.state.inputValue);
-    // this.setState({
-    //   list: [...this.state.list, this.state.inputValue],
-    //   inputValue: ''
-    // })
     this.setState((prevState) => ({
       list: [...prevState.list, prevState.inputValue],
       inputValue: ''
@@ -69,11 +61,6 @@ class App extends Component {
   }
 
   handDeleteLi(index) {
-    // console.log(index);
-
-    // this.setState({
-    //   list: list
-    // })
     this.setState((prevState) => {
       let list = [...prevState.list];
       list.splice(index, 1);
