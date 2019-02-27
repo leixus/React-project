@@ -8,7 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       inputValue: '学习React',
-      list: ['leixu','我爱我家']
+      list: [1111,'我爱我家']
     };
     this.handChanageInput = this.handChanageInput.bind(this);
     this.handClickSubmit = this.handClickSubmit.bind(this);
@@ -29,21 +29,6 @@ class App extends Component {
         </div>
         <ul>
           {this.getTodoItem()}
-          {/*{*/}
-            {/*this.state.list.map((item, index) => {*/}
-              {/*return <TodoItem key={index}*/}
-                               {/*content={item}*/}
-                               {/*index={index}*/}
-                               {/*// handDeleteItem={this.handDeleteLi.bind(this)}*/}
-                               {/*handDeleteItem={this.handDeleteLi}*/}
-
-              {/*/>*/}
-            {/*})*/}
-          {/*}*/}
-          {/*return <li key={index}*/}
-                     {/*onClick={this.handDeleteLi.bind(this, index)}*/}
-                     {/*dangerouslySetInnerHTML={{__html: res}}>*/}
-          {/*</li>*/}
         </ul>
       </div>
     );
@@ -54,7 +39,6 @@ class App extends Component {
       return <TodoItem key={index}
                        content={item}
                        index={index}
-          // handDeleteItem={this.handDeleteLi.bind(this)}
                        handDeleteItem={this.handDeleteLi}
       />
     })
