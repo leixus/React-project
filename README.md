@@ -1,3 +1,44 @@
+
+## 2019-2-28
+
+## 虚拟Dmo
+
+state 数据
+JSX 模板
+数据 + 模板 生成真实的DOM
+state 发生改变
+数据 + 模板 生成真实的DOM，替换原始的DOM
+
+### 缺陷
+
+非常耗性能
+
+1、数据 + 模板 生成真实的DOM    （损耗性能）
+<div id='abc'><span>Hello World</span></div>
+2、生成虚拟Dom(虚拟Dom是一个JS对象)
+[div， {id: 'abc'}, [span, {}, 'Hello World']]
+3、修改state
+4、生成新的虚拟Dom          （提升了性能）
+[div， {id: 'abc'}, [span, {}, 'bye bye']]
+5、虚拟Dom进行对比，找出差异
+6、直接操作Dom，改变内容
+
+## 2019-3-1
+
+### 深入了解虚拟Dom
+
+1、state 数据
+2、JSX 模板
+3、数据 + 模板 生成虚拟Dom（js对象）
+4、使用虚拟Dom生成真实的DOM
+5、state 发生改变
+6、生成新的Dom
+7、虚拟Dom进行对比
+8、直接操作Dom，改变span中的内容
+
+## diff算法
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

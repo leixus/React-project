@@ -9,6 +9,10 @@ class TodoItem extends Component {
     }
 
     render() {
+        
+
+        // React.createElement('div', {}, 'item')
+        // JSX -> js对象 -> 真实的DOM
         return (
             <li key={this.props.index}
                 onClick={this.handDeleteLi}>
