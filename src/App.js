@@ -25,10 +25,11 @@ class App extends Component {
                  id="insertArea"
                  type="text"
                  value={this.state.inputValue}
-                 onChange={this.handChanageInput} />
+                 onChange={this.handChanageInput} 
+                 ref={(input) => {this.input = input}}/>
           <button onClick={this.handClickSubmit}>提交</button>
         </div>
-        <ul>
+        <ul ref={(ul) => {this.ul = ul}}>
           {this.getTodoItem()}
         </ul>
       </div>
@@ -46,7 +47,8 @@ class App extends Component {
   }
 
   handChanageInput(e) {
-    const value = e.target.value;
+    // const value = e.target.value;
+    const value = this.input.value;
     // 会出现异步问题
     this.setState(() => ({
       inputValue: value
@@ -57,7 +59,10 @@ class App extends Component {
     this.setState((prevState) => ({
       list: [...prevState.list, prevState.inputValue],
       inputValue: ''
-    }))
+    }), () => {
+      console.log(this.ul.querySelectorAll('li').length);
+      
+    })
   }
 
   handDeleteLi(index) {

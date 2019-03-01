@@ -9,14 +9,11 @@ class TodoItem extends Component {
     }
 
     render() {
-        
-
         // React.createElement('div', {}, 'item')
         // JSX -> js对象 -> 真实的DOM
         return (
             <li key={this.props.index}
-                onClick={this.handDeleteLi}>
-                {this.props.content}
+                onClick={this.handDeleteLi} dangerouslySetInnerHTML={{__html: this.props.test + " - " + this.props.content}}>
             </li>
         )
     }
@@ -27,12 +24,15 @@ class TodoItem extends Component {
     }
 }
 
-TodoItem.prototypes = {
-    test: PropTypes.string.isRequired,
-    content: PropTypes.string,
+TodoItem.defaultProps = {
+    test: 'Hello World'
+};
+
+TodoItem.propTypes = {
+    test: PropTypes.string,
+    content: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     index: PropTypes.number,
     handDeleteItem: PropTypes.func
-
 };
 
 export default TodoItem;
