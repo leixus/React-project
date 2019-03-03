@@ -18,6 +18,14 @@ class TodoItem extends Component {
         )
     }
 
+    componentWillReceiveProps() {
+        console.log('componentWillReceiveProps');
+    }
+
+    componentWillUnmount() {
+        console.log('componentWillUnmount');
+    }
+
     handDeleteLi() {
         const { handDeleteItem, index } = this.props;
         handDeleteItem(index);

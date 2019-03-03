@@ -7,12 +7,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputValue: '学习React',
+      inputValue: '',
       list: [1111,'我爱我家']
     };
     this.handChanageInput = this.handChanageInput.bind(this);
     this.handClickSubmit = this.handClickSubmit.bind(this);
     this.handDeleteLi = this.handDeleteLi.bind(this)
+  }
+
+  componentWillMount() {
+    console.log('componentWillMount');
   }
 
   // 当组件的stats或者props发生改变的时候，render函数就会重新执行
@@ -34,6 +38,23 @@ class App extends Component {
         </ul>
       </div>
     );
+  }
+
+  componentDidMount() {
+    console.log('componentDidMount');
+  }
+
+  componentWillUpdate() {
+    console.log('componentWillUpdate');
+  }
+
+  shouldComponentUpdate() {
+    console.log('shouldComponentUpdate');
+    return true;
+  }
+
+  componentDidUpdate() {
+    console.log('componentDidUpdate');
   }
 
   getTodoItem() {
