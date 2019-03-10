@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TodoItem from './shares/TodoItem';
 import axios from 'axios'
 import './App.css';
+import CssAnimate from "./shares/CssAnimate";
 
 class App extends Component {
 
@@ -37,6 +38,7 @@ class App extends Component {
         <ul ref={(ul) => {this.ul = ul}}>
           {this.getTodoItem()}
         </ul>
+        <CssAnimate></CssAnimate>
       </div>
     );
   }

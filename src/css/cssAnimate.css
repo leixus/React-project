@@ -1,0 +1,86 @@
+/*第一种*/
+/*.show {*/
+    /*!*display: block;*!*/
+    /*opacity: 1;*/
+    /*transition: all 1s ease-in;*/
+/*}*/
+
+/*.hide {*/
+    /*opacity: 0;*/
+    /*!*display: none;*!*/
+    /*transition: all 1s ease-in;*/
+/*}*/
+
+/*第二种*/
+/*.show {*/
+    /*animation: show-item 2s ease-in forwards;*/
+/*}*/
+
+/*.hide {*/
+    /*animation: hide-item 2s ease-in forwards;*/
+/*}*/
+
+/*@keyframes show-item {*/
+    /*0% {*/
+        /*opacity: 0;*/
+        /*color: red;*/
+    /*}*/
+
+    /*50% {*/
+        /*opacity: 0.5;*/
+        /*color: green;*/
+    /*}*/
+
+    /*100% {*/
+        /*opacity: 1;*/
+        /*color: blue;*/
+    /*}*/
+/*}*/
+
+/*@keyframes hide-item {*/
+    /*0% {*/
+        /*opacity: 1;*/
+        /*color: red;*/
+    /*}*/
+
+    /*50% {*/
+        /*opacity: 0.5;*/
+        /*color: green;*/
+    /*}*/
+
+    /*100% {*/
+        /*opacity: 0;*/
+        /*color: blue;*/
+    /*}*/
+/*}*/
+
+/*第三种*/
+.message-enter {
+    opacity: 0.01;
+    transform: scale(0.9) translateY(50%);
+}
+
+.message-enter-active {
+    opacity: 1;
+    transform: scale(1) translateY(0%);
+    transition: all 300ms ease-out;
+}
+
+.message-enter-done {
+    opacity: 1;
+}
+
+.message-exit {
+    opacity: 1;
+    transform: scale(1) translateY(0%);
+}
+
+.message-exit-active {
+    opacity: 0.01;
+    transform: scale(0.9) translateY(50%);
+    transition: all 300ms ease-out;
+}
+
+.message-exit-done {
+    opacity: 0;
+}
