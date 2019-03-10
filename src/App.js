@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TodoItem from './shares/TodoItem';
+import axios from 'axios'
 import './App.css';
 
 class App extends Component {
@@ -8,7 +9,7 @@ class App extends Component {
     super(props);
     this.state = {
       inputValue: '',
-      list: [1111,'我爱我家']
+      list: []
     };
     this.handChanageInput = this.handChanageInput.bind(this);
     this.handClickSubmit = this.handClickSubmit.bind(this);
@@ -16,7 +17,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    console.log('componentWillMount');
+    // console.log('componentWillMount');
   }
 
   // 当组件的stats或者props发生改变的时候，render函数就会重新执行
@@ -41,20 +42,33 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log('componentDidMount');
+    // console.log('componentDidUpdate');
+    axios.get('../../data/list.json')
+        .then( (res) => {
+          console.log(res.data);
+          this.setState(() => {
+            return {
+              list: res.data
+            }
+          })
+        })
+        .catch( () => {
+          console.log('error')
+        })
+    // console.log('componentDidMount');
   }
 
   componentWillUpdate() {
-    console.log('componentWillUpdate');
+    // console.log('componentWillUpdate');
   }
 
   shouldComponentUpdate() {
-    console.log('shouldComponentUpdate');
+    // console.log('shouldComponentUpdate');
     return true;
   }
 
   componentDidUpdate() {
-    console.log('componentDidUpdate');
+
   }
 
   getTodoItem() {
@@ -82,7 +96,6 @@ class App extends Component {
       inputValue: ''
     }), () => {
       console.log(this.ul.querySelectorAll('li').length);
-      
     })
   }
 

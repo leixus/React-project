@@ -11,19 +11,25 @@ class TodoItem extends Component {
     render() {
         // React.createElement('div', {}, 'item')
         // JSX -> js对象 -> 真实的DOM
+        // console.log('hou-item');
         return (
             <li key={this.props.index}
-                onClick={this.handDeleteLi} dangerouslySetInnerHTML={{__html: this.props.test + " - " + this.props.content}}>
+                onClick={this.handDeleteLi}
+                dangerouslySetInnerHTML={{__html: this.props.test + " - " + this.props.content}}>
             </li>
         )
     }
 
+    shouldComponentUpdate() {
+        return false;
+    }
+
     componentWillReceiveProps() {
-        console.log('componentWillReceiveProps');
+        // console.log('componentWillReceiveProps');
     }
 
     componentWillUnmount() {
-        console.log('componentWillUnmount');
+        // console.log('componentWillUnmount');
     }
 
     handDeleteLi() {
